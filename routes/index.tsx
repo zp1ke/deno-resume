@@ -1,7 +1,8 @@
-import { ResumeHeader } from "../components/Header.tsx";
+import { Header } from "../components/Header.tsx";
 import { ResumeSchema } from "@kurone-kito/jsonresume-types";
+import { Menu } from "../components/Menu.tsx";
 
-export default async function Home() {
+const Index = async () => {
   const resumeUrl =
     "https://gist.githubusercontent.com/zp1ke/1afda31f1def931881fb8072a187aaec/raw/586177ae5899fab3b05c282c5381cee84c33c5ca/resume.json";
   const resumeResponse = await fetch(resumeUrl);
@@ -9,13 +10,16 @@ export default async function Home() {
     const resumeJson = await resumeResponse.text();
     const resumeData: ResumeSchema = JSON.parse(resumeJson);
     return (
-      <main>
-        <ResumeHeader resume={resumeData} />
-      </main>
+      <div class="grid grid-cols-desktop gap-x-5 lg:grid-cols-1  gap-y-10 lg:gap-y-0">
+        <Menu />
+        <Header resume={resumeData} />
+      </div>
     );
   }
-  return new Response('', {
+  return new Response("", {
     status: 307,
-    headers: { Location: '/about' },
+    headers: { Location: "/about" },
   });
-}
+};
+
+export default Index;
