@@ -17,8 +17,7 @@ export default {
       "gray-light": "#d3dce6",
     },
     fontFamily: {
-      sans: ["Graphik", "sans-serif"],
-      serif: ["Merriweather", "serif"],
+      sans: ["JetbrainsMono", "sans-serif"],
     },
   },
 } satisfies Config;

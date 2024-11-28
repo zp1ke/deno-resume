@@ -14,5 +14,8 @@ export default async function Home() {
       </main>
     );
   }
-  return <h1>Json not found, TODO</h1>;
+  return new Response('', {
+    status: 307,
+    headers: { Location: '/about' },
+  });
 }
