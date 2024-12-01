@@ -1,5 +1,5 @@
-import { Octokit } from "https://esm.sh/octokit@4.0.2";
 import "jsr:@std/dotenv/load";
+import { Octokit } from "npm:@octokit/rest";
 
 const authToken = Deno.env.get("GITHUB_ACCESS_TOKEN");
 const gistId = Deno.env.get("GITHUB_GIST_ID") ?? "";
