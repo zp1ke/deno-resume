@@ -1,4 +1,20 @@
 import { ResumeSchema } from "@kurone-kito/jsonresume-types";
+import { fetchGistContent } from "./githubClient.ts";
+
+let resume: ResumeSchema | undefined;
+
+export const fetchResume = async (): Promise<ResumeSchema> => {
+  if (!resume) {
+    try {
+      const content = await fetchGistContent();
+      resume = JSON.parse(content);
+      // deno-lint-ignore no-explicit-any
+    } catch (e: any) {
+      console.error(`Error fetching resume: ${e}`);
+    }
+  }
+  return resume ?? fallbackResume;
+};
 
 const fallbackResume: ResumeSchema = {
   basics: {
@@ -55,5 +71,3 @@ const fallbackResume: ResumeSchema = {
     },
   ],
 };
-
-export default fallbackResume;
