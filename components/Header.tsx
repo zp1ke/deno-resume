@@ -13,6 +13,28 @@ export const Header = (props: HeaderProps) => {
         <p class="whitespace-pre-wrap">
           {props.resume.basics?.summary}
         </p>
+        <div class="col-span-2 lg:col-span-1 flex gap-1 items-center mt-2">
+          {props.resume.basics?.profiles?.map(function (profile, i) {
+            return (
+              <div class="mr-2 w-3" key={`profile-link-${i}`}>
+                <a
+                  width="12"
+                  height="12"
+                  href={profile.url}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <img
+                    class="w-full"
+                    loading="lazy"
+                    src={`/${profile.network}.svg`}
+                    alt={profile.network}
+                  />
+                </a>
+              </div>
+            );
+          })}
+        </div>
         <a
           class="inline-flex items-center pt-2 border-0"
           href="resume.pdf"
@@ -30,10 +52,10 @@ export const Header = (props: HeaderProps) => {
       </div>
       <img
         class="flex-shrink-0 md:order-1 md:w-8 rounded-xl"
-        src="pixel-portrait.png"
+        src="/pixel-portrait.png"
         height="150"
         width="150"
-        alt={props.resume.basics?.name}
+        alt=""
       />
     </div>
   );

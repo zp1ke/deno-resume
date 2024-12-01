@@ -5,12 +5,14 @@ import fallbackResume from "../utils/fallbackResume.ts";
 
 const Index = async () => {
   const resumeUrl =
-    "https://gist.githubusercontent.com/zp1ke/1afda31f1def931881fb8072a187aaec/raw/586177ae5899fab3b05c282c5381cee84c33c5ca/resume.json";
+    "https://api.github.com/gists/1afda31f1def931881fb8072a187aaec";
   const resumeResponse = await fetch(resumeUrl);
   try {
     if (resumeResponse.status === 200) {
-      const resumeJson = await resumeResponse.text();
-      const resume: ResumeSchema = JSON.parse(resumeJson);
+      const resumeJson = await resumeResponse.json();
+      const resume: ResumeSchema = JSON.parse(
+        resumeJson.files["resume.json"].content,
+      );
       return IndexBody(resume);
     }
     // deno-lint-ignore no-explicit-any
