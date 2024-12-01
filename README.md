@@ -2,7 +2,8 @@
 
 [![Deno Deploy](https://github.com/zp1ke/deno-resume/actions/workflows/deno-deploy.yml/badge.svg)](https://github.com/zp1ke/deno-resume/actions/workflows/deno-deploy.yml)
 
-Built with [Deno Fresh](https://fresh.deno.dev/) and deployed with [Deno Deploy](https://deno.com/deploy) at [Zp1ke](https://zp1ke.deno.dev/).
+Built with [Deno Fresh](https://fresh.deno.dev/) and deployed with
+[Deno Deploy](https://deno.com/deploy) at [Zp1ke](https://zp1ke.deno.dev/).
 
 Get a random joke [here](https://sp1ke.dev/api/joke).
 

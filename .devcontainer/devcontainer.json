@@ -1,43 +1,43 @@
 {
-	"name": "Deno",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	"features": {},
-	"forwardPorts": [],
-	"postCreateCommand": "node -v & deno -v",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"justjavac.vscode-deno-extensionpack",
-				"denoland.vscode-deno",
-				"bradlc.vscode-tailwindcss"
-			],
-			"settings": {
-				"deno.enable": true,
-				"deno.lint": true,
-				"editor.formatOnSave": true,
-				"editor.codeActionsOnSave": {
-					"source.organizeImports": "explicit"
-				},
-				"editor.tabSize": 2,
-				"editor.detectIndentation": false,
-				"[typescriptreact]": {
-					"editor.defaultFormatter": "denoland.vscode-deno"
-				},
-				"[typescript]": {
-					"editor.defaultFormatter": "denoland.vscode-deno"
-				},
-				"[javascriptreact]": {
-					"editor.defaultFormatter": "denoland.vscode-deno"
-				},
-				"[javascript]": {
-					"editor.defaultFormatter": "denoland.vscode-deno"
-				},
-				"css.customData": [
-					".vscode/tailwind.json"
-				]
-			}
-		}
-	}
+  "name": "Deno",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {},
+  "forwardPorts": [],
+  "postCreateCommand": "node -v & deno -v",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "justjavac.vscode-deno-extensionpack",
+        "denoland.vscode-deno",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "deno.enable": true,
+        "deno.lint": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit"
+        },
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[javascriptreact]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "css.customData": [
+          ".vscode/tailwind.json"
+        ]
+      }
+    }
+  }
 }

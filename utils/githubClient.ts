@@ -1,10 +1,8 @@
-import "jsr:@std/dotenv/load";
 import { Octokit } from "npm:@octokit/rest";
 
-const authToken = Deno.env.get("GITHUB_ACCESS_TOKEN");
-const gistId = Deno.env.get("GITHUB_GIST_ID") ?? "";
-const gistFileName = Deno.env.get("GITHUB_GIST_FILE_NAME") ?? "";
-const octokit = new Octokit({ auth: authToken });
+const gistId = "1afda31f1def931881fb8072a187aaec";
+const gistFileName = "resume.json";
+const octokit = new Octokit();
 
 let gistContent: string = "";
 

@@ -15,7 +15,7 @@ jobs:
       contents: read
 
     steps:
-      - name: Clone repository
+      - name: Clone repo
         uses: actions/checkout@v4
 
       - name: Install Deno
@@ -23,12 +23,11 @@ jobs:
         with:
           deno-version: v2.x
 
-      - name: Build step
+      - name: Check
+        run: "deno task check"
+
+      - name: Build
         run: "deno task build"
-        env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_GIST_ID: 1afda31f1def931881fb8072a187aaec
-          GITHUB_GIST_FILE_NAME: resume.json
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
