@@ -4,7 +4,12 @@ interface HeaderProps {
   resume: ResumeSchema;
 }
 
-const ProfileLink = (props: { network?: string; url?: string }) => (
+interface ProfileProps {
+  network?: string;
+  url?: string;
+}
+
+const ProfileLink = (props: ProfileProps) => (
   <div class="mr-2 w-3">
     <a
       width="12"
