@@ -2,6 +2,7 @@ import { FreshContext } from "$fresh/server.ts";
 
 // Jokes courtesy of https://punsandoneliners.com/randomness/programmer-jokes/
 const JOKES = [
+  "I love pressing the F5 key. It's refreshing",
   "Why do Java developers often wear glasses? They can't C#.",
   "A SQL query walks into a bar, goes up to two tables and says “can I join you?”",
   "Wasn't hard to crack Forrest Gump's password. 1forrest1.",
