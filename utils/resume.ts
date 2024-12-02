@@ -1,19 +1,22 @@
 import { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import { fetchGistContent } from "./githubClient.ts";
+import { EnumDictionary, Lang } from "./types.ts";
 
-let resume: ResumeSchema | undefined;
+const gistsIds: EnumDictionary<Lang, string> = {
+  [Lang.EN]: "1afda31f1def931881fb8072a187aaec",
+  [Lang.ES]: "1afda31f1def931881fb8072a187aaec",
+};
 
-export const fetchResume = async (): Promise<ResumeSchema> => {
-  if (!resume) {
-    try {
-      const content = await fetchGistContent();
-      resume = JSON.parse(content);
-      // deno-lint-ignore no-explicit-any
-    } catch (e: any) {
-      console.error(`Error fetching resume: ${e}`);
-    }
+export const fetchResume = async (lang: Lang): Promise<ResumeSchema> => {
+  try {
+    const gistId = gistsIds[lang];
+    const content = await fetchGistContent(gistId);
+    return JSON.parse(content);
+    // deno-lint-ignore no-explicit-any
+  } catch (e: any) {
+    console.error(`Error fetching resume: ${e}`);
+    return fallbackResume;
   }
-  return resume ?? fallbackResume;
 };
 
 const fallbackResume: ResumeSchema = {

@@ -1,16 +1,14 @@
 import { type PageProps } from "$fresh/server.ts";
+import { Lang } from "../utils/types.ts";
 
-export default function App({ Component }: PageProps) {
+const App = ({ Component }: PageProps) => {
   return (
-    <html>
+    <html lang={Lang.EN}>
       <head>
+        <title>Sp1k_e</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sp1k_e</title>
-        <meta
-          name="description"
-          content="Software Developer"
-        />
+        <meta name="description" content="Software Developer" />
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
@@ -20,4 +18,6 @@ export default function App({ Component }: PageProps) {
       </body>
     </html>
   );
-}
+};
+
+export default App;
