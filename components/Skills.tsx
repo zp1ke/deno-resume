@@ -1,6 +1,9 @@
 import { ResumeSchema } from "@kurone-kito/jsonresume-types";
+import { i18n, Message } from "../utils/i18n.ts";
+import { Lang } from "../utils/types.ts";
 
 interface SkillsProps {
+  lang: Lang;
   resume: ResumeSchema;
 }
 
@@ -25,10 +28,13 @@ const Section = (props: SkillProps) => (
 
 const Skills = (props: SkillsProps) => (
   <>
-    <h3>Skills</h3>
+    <h3>{i18n(props.lang, Message.Skills)}</h3>
     <div class="space-y-3">
       {props.resume.skills?.map((skills) => (
-        <Section key={`skill-${skills.name}-${skills.level}`} {...skills} />
+        <Section
+          key={`skill-${skills.name}-${skills.level}`}
+          {...skills}
+        />
       ))}
     </div>
   </>

@@ -27,8 +27,8 @@ const Index = (props: PageProps<IndexData>) => {
   return (
     <div class="grid grid-cols-desktop gap-x-5 lg:grid-cols-1  gap-y-10 lg:gap-y-0">
       <Menu lang={lang} />
-      <Header resume={resume} />
-      <Skills resume={resume} />
+      <Header lang={lang} resume={resume} />
+      <Skills lang={lang} resume={resume} />
     </div>
   );
 };

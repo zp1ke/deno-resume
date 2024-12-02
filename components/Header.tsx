@@ -1,6 +1,9 @@
 import { ResumeSchema } from "@kurone-kito/jsonresume-types";
+import { i18n, Message } from "../utils/i18n.ts";
+import { Lang } from "../utils/types.ts";
 
 interface HeaderProps {
+  lang: Lang;
   resume: ResumeSchema;
 }
 
@@ -28,7 +31,11 @@ const ProfileLink = (props: ProfileProps) => (
   </div>
 );
 
-const ResumeLink = () => (
+interface ResumeProps {
+  lang: Lang;
+}
+
+const ResumeLink = (props: ResumeProps) => (
   <>
     <a
       class="inline-flex items-center pt-2 border-0"
@@ -42,7 +49,7 @@ const ResumeLink = () => (
         height="40"
         alt=""
       />
-      Download Resume
+      {i18n(props.lang, Message.DownloadResume)}
     </a>
   </>
 );
@@ -61,7 +68,7 @@ const Header = (props: HeaderProps) => {
             <ProfileLink key={`profile-link-${profile.network}`} {...profile} />
           ))}
         </div>
-        <ResumeLink />
+        <ResumeLink lang={props.lang} />
       </div>
       <img
         class="flex-shrink-0 md:order-1 md:w-8 rounded-xl"
