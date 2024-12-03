@@ -1,5 +1,6 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import { ResumeSchema } from "@kurone-kito/jsonresume-types";
+import Footer from "../components/Footer.tsx";
 import Header from "../components/Header.tsx";
 import Menu from "../components/Menu.tsx";
 import Skills from "../components/Skills.tsx";
@@ -29,6 +30,7 @@ const Index = (props: PageProps<IndexData>) => {
       <Menu lang={lang} />
       <Header lang={lang} resume={resume} />
       <Skills lang={lang} resume={resume} />
+      <Footer lang={lang} />
     </div>
   );
 };
