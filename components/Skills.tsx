@@ -16,7 +16,7 @@ interface SkillProps {
 const Section = (props: SkillProps) => (
   <>
     <h4>
-      {props.name}&nbsp;<small class="text-gray-600">({props.level})</small>
+      {props.name}&nbsp;<small>({props.level})</small>
     </h4>
     <div class="grid grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-y-1 ">
       {(props.keywords ?? []).map((keyword) => (

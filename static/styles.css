@@ -19,40 +19,44 @@
   }
 
   html {
-    @apply text-html bg-gray;
+    @apply text-html bg-slate-50 dark:bg-gray;
   }
   body {
-    @apply text-sm text-white leading-none tracking-wide;
+    @apply text-sm text-slate-950 dark:text-white leading-none tracking-wide;
   }
   h1 {
     @apply text-xl leading-none font-bold sm:text-lg;
   }
   h2 {
-    @apply text-lg font-bold text-gray-light sm:text-md;
+    @apply text-lg font-bold text-slate-700 dark:text-gray-light sm:text-md;
   }
   h3 {
-    @apply text-right uppercase text-md font-bold text-gray-light lg:mt-6
-      lg:mb-2 md:mt-4 lg:text-left;
+    @apply text-right uppercase text-md font-bold text-slate-700
+      dark:text-gray-light lg:mt-6 lg:mb-2 md:mt-4 lg:text-left;
   }
   h4 {
-    @apply text-white font-bold text-md mb-1 lg:mb-1 md:mb-0.8;
+    @apply text-slate-950 dark:text-white font-bold text-md mb-1 lg:mb-1
+      md:mb-0.8;
   }
   h5 {
-    @apply text-gray-light leading-snug;
+    @apply text-slate-700 dark:text-gray-light leading-snug;
   }
   ul {
     @apply list-disc list-inside;
   }
   li {
-    @apply text-gray-light leading-normal;
+    @apply text-slate-700 dark:text-gray-light leading-normal;
   }
   a {
-    @apply text-gray-light leading-normal;
+    @apply text-slate-700 dark:text-gray-light leading-normal;
   }
   p {
-    @apply text-justify text-gray-light leading-snug;
+    @apply text-justify text-slate-700 dark:text-gray-light leading-snug;
   }
   label {
-    @apply text-gray-light leading-snug;
+    @apply text-slate-700 dark:text-gray-light leading-snug;
+  }
+  small {
+    @apply text-slate-400 dark:text-gray-600 leading-snug;
   }
 }

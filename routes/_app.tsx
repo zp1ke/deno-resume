@@ -17,7 +17,7 @@ const App = ({ data, Component }: PageProps) => {
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
-        <div class="max-w-xl my-5 mx-auto lg:mx-2 sm:mx-1 text-sm text-white leading-none tracking-wide md:my-3">
+        <div class="max-w-xl my-5 mx-auto lg:mx-2 sm:mx-1 text-sm leading-none tracking-wide md:my-3">
           <Component />
         </div>
       </body>

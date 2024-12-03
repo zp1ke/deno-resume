@@ -8,6 +8,7 @@ import * as $_middleware from "./routes/_middleware.ts";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $index from "./routes/index.tsx";
 import * as $languague from "./islands/languague.tsx";
+import * as $themeMode from "./islands/themeMode.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -20,6 +21,7 @@ const manifest = {
   },
   islands: {
     "./islands/languague.tsx": $languague,
+    "./islands/themeMode.tsx": $themeMode,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

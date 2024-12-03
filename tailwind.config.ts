@@ -4,6 +4,7 @@ export default {
   content: [
     "{components,routes,islands,routes,utils}/**/*.{ts,tsx,js,jsx}",
   ],
+  darkMode: "selector",
   theme: {
     fontFamily: {
       sans: ["JetbrainsMono", "sans-serif"],
