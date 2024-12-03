@@ -1,9 +1,9 @@
 import { ResumeSchema } from "@kurone-kito/jsonresume-types";
 import { fetchGistContent } from "./githubClient.ts";
-import { EnumDictionary, Lang } from "./types.ts";
+import { Dictionary, Lang } from "./types.ts";
 
 const gistId = "1afda31f1def931881fb8072a187aaec";
-const gistNames: EnumDictionary<Lang, string> = {
+const gistNames: Dictionary<Lang, string> = {
   [Lang.EN]: "resume-en.json",
   [Lang.ES]: "resume-es.json",
 };
@@ -168,7 +168,7 @@ const fallbackResumeEs: ResumeSchema = {
   ],
 };
 
-const fallbackResumes: EnumDictionary<Lang, ResumeSchema> = {
+const fallbackResumes: Dictionary<Lang, ResumeSchema> = {
   [Lang.EN]: fallbackResumeEn,
   [Lang.ES]: fallbackResumeEs,
 };

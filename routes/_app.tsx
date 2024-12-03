@@ -1,11 +1,12 @@
 import { type PageProps } from "$fresh/server.ts";
 import { i18n, Message } from "../utils/i18n.ts";
-import { Lang } from "../utils/types.ts";
+import { Lang, Theme } from "../utils/types.ts";
 
 const App = ({ data, Component }: PageProps) => {
   const lang = (data?.lang as Lang) || Lang.EN;
+  const theme = (data?.theme as Theme) || Theme.LIGHT;
   return (
-    <html lang={lang}>
+    <html lang={lang} class={theme}>
       <head>
         <title>Sp1k_e</title>
         <meta charset="utf-8" />

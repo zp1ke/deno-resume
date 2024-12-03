@@ -13,6 +13,6 @@ export type State = {
   theme: Theme | undefined;
 };
 
-export type EnumDictionary<T extends string | symbol, U> = {
+export type Dictionary<T extends string | symbol, U> = {
   [K in T]: U;
 };
