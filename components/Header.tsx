@@ -13,10 +13,10 @@ interface ProfileProps {
 }
 
 const ProfileLink = (props: ProfileProps) => (
-  <div class="mr-2 w-3">
+  <div class="mr-2 w-4">
     <a
-      width="12"
-      height="12"
+      width="14"
+      height="14"
       href={props.url}
       rel="noreferrer noopener"
       target="_blank"
@@ -26,6 +26,7 @@ const ProfileLink = (props: ProfileProps) => (
         loading="lazy"
         src={`/${props.network}.svg`}
         alt={props.network}
+        title={props.network}
       />
     </a>
   </div>
@@ -44,7 +45,7 @@ const ResumeLink = (props: ResumeProps) => (
     >
       <img
         class="mr-2"
-        src="/download-dark.svg"
+        src="/download.svg"
         width="40"
         height="40"
         alt=""
@@ -64,7 +65,10 @@ const Header = (props: HeaderProps) => (
       </p>
       <div class="col-span-2 lg:col-span-1 flex gap-1 items-center mt-2">
         {props.resume.basics?.profiles?.map((profile) => (
-          <ProfileLink key={`profile-link-${profile.network}`} {...profile} />
+          <ProfileLink
+            key={`profile-link-${profile.network}`}
+            {...profile}
+          />
         ))}
       </div>
       <ResumeLink lang={props.lang} />

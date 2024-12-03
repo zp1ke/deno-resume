@@ -13,7 +13,7 @@ const getMode = (): Theme => {
       return Theme.LIGHT;
     }
   }
-  return Theme.SYSTEM;
+  return Theme.LIGHT;
 };
 
 const updateTheme = () => {
@@ -26,7 +26,7 @@ const updateTheme = () => {
 };
 
 const nextTheme = (theme: Theme): Theme => {
-  const values = [Theme.SYSTEM, Theme.LIGHT, Theme.DARK];
+  const values = [Theme.LIGHT, Theme.DARK];
   const themeIndex = values.indexOf(theme);
   const nextIndex = (themeIndex + 1) % values.length;
   return values[nextIndex];
@@ -34,22 +34,24 @@ const nextTheme = (theme: Theme): Theme => {
 
 const toggleTheme = () => {
   const theme = nextTheme(getMode());
-  if (theme === Theme.SYSTEM) {
-    delete localStorage.theme;
-  } else {
-    localStorage.theme = theme;
-  }
+  localStorage.theme = theme;
   updateTheme();
 };
 
 const ThemeMode = () => {
+  const theme = getMode();
   return (
     <button
       class="h-4 w-4 font-bold rounded-xl p-0.5 cursor-pointer group border-2 transition-colors border-transparent bg-gray-light dark:bg-gray-dark text-slate-200 dark:text-gray-light hover:border-gray-600"
       type="button"
       onClick={toggleTheme}
     >
-      {getMode().toUpperCase()}
+      <img
+        class="w-full"
+        loading="lazy"
+        src={`/theme-${theme.toLowerCase()}.svg`}
+        alt={theme}
+      />
     </button>
   );
 };
