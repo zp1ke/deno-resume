@@ -2,16 +2,17 @@ import { type PageProps } from "$fresh/server.ts";
 import { i18n, Message } from "../utils/i18n.ts";
 import { Lang } from "../utils/types.ts";
 
-const App = ({ Component }: PageProps) => {
+const App = ({ data, Component }: PageProps) => {
+  const lang = (data?.lang as Lang) || Lang.EN;
   return (
-    <html lang={Lang.EN}>
+    <html lang={lang}>
       <head>
         <title>Sp1k_e</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content={i18n(Lang.EN, Message.PageMetaDescription)}
+          content={i18n(lang, Message.PageMetaDescription)}
         />
         <link rel="stylesheet" href="/styles.css" />
       </head>
