@@ -21,7 +21,7 @@ const ThemeMode = (props: ThemeModeProps) => {
   const _render = useMemo(
     () => {
       const window = globalThis.window;
-      if (props.theme === Theme.SYSTEM && window) {
+      if (props.theme === Theme.SYSTEM && window && window.matchMedia) {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
           document.documentElement.classList.add("dark");
           setTheme(Theme.DARK);
