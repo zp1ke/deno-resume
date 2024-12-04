@@ -6,6 +6,7 @@ export enum Lang {
 export enum Theme {
   LIGHT = "light",
   DARK = "dark",
+  SYSTEM = "system",
 }
 
 export type State = {

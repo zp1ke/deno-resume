@@ -51,7 +51,7 @@
     @apply text-slate-700 dark:text-gray-light leading-normal;
   }
   p {
-    @apply text-justify text-slate-700 dark:text-gray-light leading-snug;
+    @apply text-slate-700 dark:text-gray-light leading-snug;
   }
   label {
     @apply text-slate-700 dark:text-gray-light leading-snug;

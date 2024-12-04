@@ -36,7 +36,7 @@ const fetchTheme = (cookies: Dictionary<string, string>): Theme => {
       return cookies[key] as Theme;
     }
   }
-  return Theme.LIGHT;
+  return Theme.SYSTEM;
 };
 
 export const handler = [
