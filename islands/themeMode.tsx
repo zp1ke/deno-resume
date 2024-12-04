@@ -14,7 +14,9 @@ interface ThemeModeProps {
 }
 
 const ThemeMode = (props: ThemeModeProps) => {
-  const [theme, setTheme] = useState(props.theme === Theme.DARK ? Theme.DARK : Theme.LIGHT);
+  const [theme, setTheme] = useState(
+    props.theme === Theme.DARK ? Theme.DARK : Theme.LIGHT,
+  );
 
   const _render = useMemo(
     () => {
