@@ -11,7 +11,9 @@
       "extensions": [
         "justjavac.vscode-deno-extensionpack",
         "denoland.vscode-deno",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
       ],
       "settings": {
         "deno.enable": true,
