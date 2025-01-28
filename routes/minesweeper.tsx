@@ -237,7 +237,7 @@ const Index = () => {
               <h2 className="text-lg font-semibold text-left my-2">Contact Us</h2>
               <p className="text-base">If you have any questions about this Privacy Policy, You can contact us:</p>
               <ul className="list-disc list-outside">
-                <li>By email: zp1ke@proton.me</li>
+                <li>By email: miche.atucha@gmail.com</li>
               </ul>
             </div>
           </div>
